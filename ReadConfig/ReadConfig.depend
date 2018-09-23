@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1537681345 source:/home/ale/Documentos/C/Read/main.c
+1537736555 source:/home/ale/Documentos/C/ReadConfig/ReadConfig.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
