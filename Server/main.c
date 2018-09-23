@@ -84,8 +84,10 @@ struct Config readConfigFiel()
     char buf[1000];
 
     ptr_file =fopen("config.txt","r");
-        if (!ptr_file)
-        return configuration;
+        if (!ptr_file){
+             printf( "No se encontro config.txt \n");
+            return configuration;
+        }
 
             int count=0;
 
