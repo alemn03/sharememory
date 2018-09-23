@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1537730995 source:/Users/josuech/Documents/c/Server/main.c
+	<stdio.h>
+	<arpa/inet.h>
+	<sys/socket.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<sys/types.h>
+	<netinet/in.h>
+
