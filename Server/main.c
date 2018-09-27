@@ -1,14 +1,12 @@
-#include <stdio.h>
-#include <arpa/inet.h>
-#include <sys/socket.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <assert.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <stdio.h>
+#include<string.h>
 
 
 
@@ -182,6 +180,8 @@ char* str_split(char* a_str, const char a_delim)
 // se crea un metodo que lea el config file
 struct Config readConfigFiel()
 {
+
+
     struct Config configuration;
     FILE *ptr_file;
     char buf[1000];
@@ -261,7 +261,6 @@ return configuration;
 }
 
 
-
 int main(void)
 {
 
@@ -322,7 +321,7 @@ for(int i=0;i<n;i++){
 
 /*end hash*/
 
-    struct sockaddr_in direccionServidor;
+ struct sockaddr_in direccionServidor;
     direccionServidor.sin_family = AF_INET;
     direccionServidor.sin_addr.s_addr = INADDR_ANY;
     direccionServidor.sin_port = htons(8081);

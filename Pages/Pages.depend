@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1538022142 source:/home/josuech28/Documents/repo/sharememory/Pages/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Pages.h"
+
+1538022228 /home/josuech28/Documents/repo/sharememory/Pages/Pages.h
+
+1538021945 source:/home/josuech28/Documents/repo/sharememory/Pages/Pages.c
+	"Pages.h"
+

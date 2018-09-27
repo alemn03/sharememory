@@ -1,27 +1,35 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <arpa/inet.h>
+#include <sys/types.h>
 #include <sys/socket.h>
+#include <netdb.h>
+#include <stdio.h>
+#include<string.h>
 
-int main(void) {
-	struct sockaddr_in direccionServidor;
-	direccionServidor.sin_family = AF_INET;
-	direccionServidor.sin_addr.s_addr = inet_addr("127.0.0.1");
-	direccionServidor.sin_port = htons(8080);
+int main(int argc,char **argv)
+{
+    int sockfd,n;
+    char sendline[100];
+    char recvline[100];
+    struct sockaddr_in servaddr;
 
-	int cliente = socket(AF_INET, SOCK_STREAM, 0);
-	if (connect(cliente, (void*) &direccionServidor, sizeof(direccionServidor)) != 0) {
-		perror("Cliente no se puede conectar");
-		return 1;
-	}
+    sockfd=socket(AF_INET,SOCK_STREAM,0);
+    bzero(&servaddr,sizeof servaddr);
 
-	while (1) {
-		char mensaje[1000];
-		scanf("%s", mensaje);
+    servaddr.sin_family=AF_INET;
+    servaddr.sin_port=htons(22000);
 
-		send(cliente, mensaje, strlen(mensaje), 0);
-	}
+    inet_pton(AF_INET,"127.0.0.1",&(servaddr.sin_addr));
 
-	return 0;
+    connect(sockfd,(struct sockaddr *)&servaddr,sizeof(servaddr));
+
+    while(1)
+    {
+        bzero( sendline, 100);
+        bzero( recvline, 100);
+        fgets(sendline,100,stdin); /*stdin = 0 , for standard input */
+
+        write(sockfd,sendline,strlen(sendline)+1);
+        read(sockfd,recvline,100);
+        printf("%s",recvline);
+    }
+
 }
