@@ -9,7 +9,7 @@
 	<sys/types.h>
 	<netinet/in.h>
 
-1537738709 source:/home/ale/Documentos/C/sharememory/Server/main.c
+1538028158 source:/home/ale/Documentos/C/sharememory/Server/main.c
 	<stdio.h>
 	<arpa/inet.h>
 	<sys/socket.h>
@@ -19,4 +19,6 @@
 	<sys/types.h>
 	<netinet/in.h>
 	<assert.h>
+	<stdlib.h>
+	<stdbool.h>
 

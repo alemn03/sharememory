@@ -1,4 +1,4 @@
 IPServer:10.10.0.1
-NumeroPaginas:30
+NumeroPaginas:10
 MediaExponecial:25
 ProbabilidadLectura:40
