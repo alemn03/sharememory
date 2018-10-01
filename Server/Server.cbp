@@ -31,6 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="PageList.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PageList.h" />
+		<Unit filename="Pages.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Pages.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

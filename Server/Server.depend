@@ -9,16 +9,28 @@
 	<sys/types.h>
 	<netinet/in.h>
 
-1538028158 source:/home/ale/Documentos/C/sharememory/Server/main.c
-	<stdio.h>
-	<arpa/inet.h>
-	<sys/socket.h>
-	<stdlib.h>
-	<string.h>
-	<unistd.h>
+1538354758 source:/home/ale/Documentos/C/sharememory/Server/main.c
 	<sys/types.h>
 	<netinet/in.h>
 	<assert.h>
 	<stdlib.h>
 	<stdbool.h>
+	<sys/socket.h>
+	<netdb.h>
+	<stdio.h>
+	<string.h>
+	"Pages.h"
+	"PageList.h"
+
+1538338367 source:/home/ale/Documentos/C/sharememory/Server/Pages.c
+	"Pages.h"
+
+1538339174 /home/ale/Documentos/C/sharememory/Server/Pages.h
+
+1538354677 /home/ale/Documentos/C/sharememory/Server/PageList.h
+
+1538354706 source:/home/ale/Documentos/C/sharememory/Server/PageList.c
+	<stdio.h>
+	"Pages.h"
+	"PageList.h"
 

@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "Pages.h"
-#include "PageList.h"
 
 
 
@@ -25,8 +24,6 @@ struct DataItem {
 struct DataItem* hashArray[SIZE];
 struct DataItem* dummyItem;
 struct DataItem* item;
-
-struct PageList* pageList;
 
 int hashCode(int key) {
    return key % SIZE;
@@ -314,15 +311,12 @@ for(int i=0;i<n;i++){
     printf("config.ip  %s \n",config.ip);
 
    insert(i,i,i,config.ip);
-
    printf("inserto  %d \n", i);
 }
 
    display();
    struct DataItem* item = search(5);
-   add_PageList(item->data);
    delete(item);
-   show_pageList();
    display();
    //item = search(5);
    /*

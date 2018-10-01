@@ -10,3 +10,14 @@
 1538021945 source:/home/josuech28/Documents/repo/sharememory/Pages/Pages.c
 	"Pages.h"
 
+1538029046 source:/home/ale/Documentos/C/sharememory/Pages/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Pages.h"
+
+1538334511 /home/ale/Documentos/C/sharememory/Pages/Pages.h
+
+1538029046 source:/home/ale/Documentos/C/sharememory/Pages/Pages.c
+	"Pages.h"
+

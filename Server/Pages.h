@@ -3,8 +3,8 @@
 
 
 struct Pages {
-   char* version[50];
-   char* owner[50];
+   int version;
+   char owner[50];
    int  pageNumber;
 };
 

@@ -6,9 +6,8 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <stdio.h>
-#include <string.h>
-#include "Pages.h"
-#include "PageList.h"
+#include<string.h>
+#include<Pages.h>
 
 
 
@@ -18,15 +17,13 @@
 #define SIZE 20
 
 struct DataItem {
-   struct Pages data;
+   int data;
    int key;
 };
 
 struct DataItem* hashArray[SIZE];
 struct DataItem* dummyItem;
 struct DataItem* item;
-
-struct PageList* pageList;
 
 int hashCode(int key) {
    return key % SIZE;
@@ -52,20 +49,11 @@ struct DataItem *search(int key) {
    return NULL;
 }
 
-void insert(int key,int version, int pageNumber, char owner[]) {
+void insert(int key,int data) {
 
- struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
-
-  /* struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
-
+   struct DataItem *item = (struct DataItem*) malloc(sizeof(struct DataItem));
    item->data = data;
    item->key = key;
-*/
-
-item->key=key;
-item->data.pageNumber=pageNumber;
-item->data.version=version;
- strcpy(item->data.owner, owner);
 
    //get the hash
    int hashIndex = hashCode(key);
@@ -115,7 +103,7 @@ void display() {
    for(i = 0; i<SIZE; i++) {
 
       if(hashArray[i] != NULL)
-         printf(" ( key %d,numPage %d)",hashArray[i]->key,hashArray[i]->data.pageNumber);
+         printf(" (%d,%d)",hashArray[i]->key,hashArray[i]->data);
       else
          printf(" ~~ ");
    }
@@ -310,37 +298,29 @@ int n= atoi (config.numeroPaginas);
 printf("N  %d \n", n);
 
 for(int i=0;i<n;i++){
-    printf("antes insert  %d \n", i);
-    printf("config.ip  %s \n",config.ip);
 
-   insert(i,i,i,config.ip);
-
+   insert(i, "Server");
    printf("inserto  %d \n", i);
 }
 
    display();
-   struct DataItem* item = search(5);
-   add_PageList(item->data);
-   delete(item);
-   show_pageList();
-   display();
-   //item = search(5);
-   /*
+   item = search(5);
+
    if(item != NULL) {
       printf("Element found: %d\n", item->data);
    } else {
       printf("Element not found\n");
    }
-*/
-  // delete(item);
-   //item = search(5);
 
-  /* if(item != NULL) {
+   delete(item);
+   item = search(5);
+
+   if(item != NULL) {
       printf("Element found: %d\n", item->data);
    } else {
       printf("Element not found\n");
    }
-*/
+
 /*end hash*/
 
  struct sockaddr_in direccionServidor;
